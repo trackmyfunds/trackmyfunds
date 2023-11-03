@@ -1,0 +1,29 @@
+{
+  "name": "trackmyfunds",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/netlify": "^3.0.3",
+    "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.2",
+    "@lucia-auth/oauth": "^3.4.0",
+    "astro": "^3.4.3",
+    "drizzle-orm": "^0.28.6",
+    "lucia": "^2.7.3",
+    "postgres": "^3.4.3",
+    "solid-js": "^1.4.3",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.19.13"
+  }
+}
