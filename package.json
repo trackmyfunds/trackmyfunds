@@ -7,15 +7,21 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate": "drizzle-kit generate:pg",
+    "migrate": "drizzle-kit push:pg",
+    "pull": "drizzle-kit introspect:pg"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
     "@astrojs/netlify": "^3.0.3",
     "@astrojs/solid-js": "^3.0.2",
     "@astrojs/tailwind": "^5.0.2",
+    "@lucia-auth/adapter-postgresql": "^2.0.2",
     "@lucia-auth/oauth": "^3.4.0",
     "astro": "^3.4.3",
+    "astro-icon": "^0.8.1",
+    "dotenv": "^16.3.1",
     "drizzle-orm": "^0.28.6",
     "lucia": "^2.7.3",
     "postgres": "^3.4.3",
@@ -24,6 +30,8 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.19.13"
+    "@types/node": "^20.8.10",
+    "drizzle-kit": "^0.19.13",
+    "vite": "^4.5.0"
   }
 }

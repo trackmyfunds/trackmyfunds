@@ -1,0 +1,40 @@
+---
+const { title } = Astro.props;
+
+let user;
+const session = await Astro.locals.auth.validate();
+if (session) { user = session.user };
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{ title }</title>
+	</head>
+	<body class="relative font-archivo p-8 flex flex-col gap-8 w-full h-full min-w-screen min-h-screen bg-[#fefae0]">
+    <nav class="z-50 flex justify-between items-center">
+      <h3 class="text-3xl font-bold font-clash text-primary">Track My Funds</h3>
+      {
+        user ?
+        <a href="/dashboard" class="px-8 py-4 w-fit bg-[#023047] transition-all duration-150 text-white font-bold rounded-lg">Dashboard</a>
+        :
+        <a href="/auth/google">Sign in with Google</a>
+      }
+    </nav>
+    <slot />
+	</body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: Archivo;
+    src: url("Archivo-Variable.woff2");
+  }
+
+  @font-face {
+    font-family: Clash Display;
+    src: url("ClashDisplay-Variable.woff2");
+  }
+</style>
