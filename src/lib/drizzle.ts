@@ -1,5 +1,6 @@
 import postgres from "postgres";
-import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
+import * as schema from "./schema";
+import { drizzle } from "drizzle-orm/postgres-js";
 
 export const query_client = postgres(import.meta.env.DATABASE_URL as string);
-export const database : PostgresJsDatabase = drizzle(query_client);
+export const database = drizzle(query_client, { schema });

@@ -1,7 +1,38 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+
+let user;
+let items;
+const session = await Astro.locals.auth.validate();
+if (session) { 
+  user = session.user; 
+  const response = await fetch(Astro.url.origin + "/api/items");
+  const json = response.json();
+  console.log(json);
+} else { Astro.redirect("/"); }
 ---
 
 <SiteLayout title="Dashboard - Track My Funds">
   <h1 class="font-clash text-5xl font-bold tracking-wide">Dashboard</h1>
+  <form method="post" action="/api/items" class="flex flex-col gap-4 w-fit border p-8 rounded-xl border-primary">
+    <input name="user_id" type="hidden" value={user.userId} />
+    <label>
+      Amount
+      <input name="amount" type="number" min={0} />
+    </label>
+    <label>
+      <input name="category" type="radio" value="income" />
+      Income
+    </label>
+    <label>
+      <input name="category" type="radio" value="expense" />
+      Expense
+    </label>
+    <label>
+      <input name="category" type="radio" value="savings" />
+      Savings
+    </label>
+
+    <button>Create Item</button>
+  </form>
 </SiteLayout>

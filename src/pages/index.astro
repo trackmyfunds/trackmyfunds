@@ -16,7 +16,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         Track My Funds is a free, user-friendly personal finance app that helps you easily manage your money and achieve your financial goals.
       </h3>
       <a href="/auth/google" class="px-8 py-4 bg-accent text-white rounded-lg font-bold">Get Started (with Google)</a>
-      <Icon name="mdi:arrow-down" class="w-8 h-8 animate-bounce" />
+      <Icon name="ion:arrow-down-outline" class="w-8 h-8 animate-bounce" />
     </section>
 
     <section class="flex flex-col max-w-4xl w-full h-fit gap-8 mx-auto text-center">
@@ -27,6 +27,42 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       <h3 class="text-xl tracking-wide">
         Track My Funds makes managing your money simple and stress-free. Whether you're a seasoned finance expert or just starting out, you'll find everything you need to take control of your finances and reach your financial goals.
       </h3>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="flex flex-col md:flex-row gap-4">
+          <Icon name="fa-solid:money-bill-wave" class="w-32 h-fit p-4 bg-accent text-white rounded-xl"/>
+          <div class="flex flex-col text-start grow">
+            <h4 class="font-clash font-bold text-xl tracking-wide text-primary">
+              Tracking your income
+            </h4>
+            <p class="tracking-wide">
+              Effortlessly manage your finances and stay informed about your funds with our intuitive and easy-to-use tracking tool
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4">
+          <Icon name="ph:piggy-bank-bold" class="w-32 h-fit p-4 bg-accent text-white rounded-xl"/>
+          <div class="flex flex-col text-start">
+            <h4 class="font-clash font-bold text-xl tracking-wide text-primary">
+              Manage your expenses
+            </h4>
+            <p class="tracking-wide">
+              Get a clear picture of your spending and take charge of your financial well-being with our comprehensive expense management tool
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4">
+          <Icon name="ph:currency-circle-dollar-fill" class="w-36 h-fit p-4 bg-accent text-white rounded-xl"/>
+          <div class="flex flex-col text-start">
+            <h4 class="font-clash font-bold text-xl tracking-wide text-primary">
+              Break the cycle
+            </h4>
+            <p class="tracking-wide">
+              Break free from financial stress and start building a secure future with our innovative tool designed to help you break the cycle of debt and overspending.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </SiteLayout>

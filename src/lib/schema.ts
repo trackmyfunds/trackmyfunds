@@ -19,7 +19,7 @@ export const item = pgTable("items", {
   note: varchar("note"),
   category: varchar("category", { enum: ["income", "expense", "savings"] }),
   createdOn: timestamp("createdOn").defaultNow(),
-  ownerId: varchar("ownerId").notNull()
+  ownerId: varchar("ownerId").notNull().references(() => user.id, { onDelete: "cascade" })
 });
 
 // relationships between models
